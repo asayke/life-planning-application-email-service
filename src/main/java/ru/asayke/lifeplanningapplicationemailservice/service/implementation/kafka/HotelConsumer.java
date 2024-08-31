@@ -15,8 +15,8 @@ public class HotelConsumer {
     EmailService emailService;
 
     @KafkaListener(
-            topics = "${kafka.topic.name}",
-            groupId = "${kafka.consumer.group-id}"
+            topics = "${spring.kafka.topic.name}",
+            groupId = "${spring.kafka.consumer.group-id}"
     )
     public void consume(EmailEvent emailEvent) {
         emailService.send(emailEvent.getRecipient(), emailEvent.getTitle(), emailEvent.getDescription());
