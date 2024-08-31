@@ -19,6 +19,6 @@ public class HotelConsumer {
             groupId = "${spring.kafka.consumer.group-id}"
     )
     public void consume(EmailEvent emailEvent) {
-        emailService.send(emailEvent.getRecipient(), emailEvent.getTitle(), emailEvent.getDescription());
+        emailService.send(emailEvent.getRecipient(), emailEvent.getTitle(), emailEvent.getMessage());
     }
 }

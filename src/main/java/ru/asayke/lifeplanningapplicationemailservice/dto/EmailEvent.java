@@ -13,5 +13,5 @@ public class EmailEvent {
 
     String title;
 
-    String description;
+    String message;
 }
