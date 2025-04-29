@@ -17,15 +17,14 @@ spring:
   kafka:
     topic:
       name: ${TOPIC_NAME}
-    producer:
-      bootstrap-servers: ${KAFKA_HOST}
     consumer:
       group-id: email
       auto-offset-reset: earliest
+      bootstrap-servers: ${KAFKA_HOST}
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       properties:
-        string:
+        spring:
           json:
             trusted:
               packages: "*"
