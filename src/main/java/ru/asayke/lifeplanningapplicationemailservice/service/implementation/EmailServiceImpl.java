@@ -36,6 +36,6 @@ public class EmailServiceImpl implements EmailService {
         mailMessage.setText(message);
 
         mailSender.send(mailMessage);
-        log.info(String.format("Sending mail messages for $s", recipient));
+        log.info(String.format("Sending mail messages for %s", recipient));
     }
 }
